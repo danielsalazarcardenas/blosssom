@@ -136,27 +136,17 @@
             const nombre = document.createElement('div');
             nombre.className = 'movie';
 
-            // Vaciar contenido para luego agregar palabra por palabra en líneas separadas
+           
             nombre.innerHTML = '';
 
-            // Separamos el título en palabras
             const palabras = pelicula.titulo.split(' ');
-
-            // Para cada palabra, creamos un span con display block y margen inferior aleatorio
             palabras.forEach(palabra => {
                 const span = document.createElement('span');
                 span.textContent = palabra;
                 span.style.display = 'block';
-
-                // Definir opciones de alineación
                 const alineaciones = ['left', 'center', 'right'];
-
-                // Elegir una alineación aleatoria
                 const alineacionAleatoria = alineaciones[Math.floor(Math.random() * alineaciones.length)];
                 span.style.textAlign = alineacionAleatoria;
-
-
-                // margen inferior aleatorio entre 2px y 10px para variar el espaciado
                 span.style.marginBottom = `${Math.random() * 8 + 2}px`;
                 nombre.appendChild(span);
             });
@@ -207,7 +197,7 @@
 
             const peli = peliculas[Math.floor(Math.random() * peliculas.length)];
             const contenedor = document.getElementById('destacada');
-            contenedor.innerHTML = `<div><strong>${peli.titulo}</strong></div><div>Dirigida por: ${peli.director}</div>`;
+            contenedor.innerHTML = `<div><strong>${peli.titulo}</strong></div><div>por: ${peli.director}</div>`;
             contenedor.style.opacity = 1;
         }
 
